@@ -1,7 +1,8 @@
 import java.util.Scanner;
-class TwistedPrimeNumber
+class TwistedPrimeNumber2
 	{
-    public static void main(String[] args) {
+    public static void main(String[] args)
+		{
         Scanner sc = new Scanner(System.in);
 
         
@@ -10,53 +11,58 @@ class TwistedPrimeNumber
 
         // Check if the original number is prime
         int count = 0;
-				for (int i = 2; i < num; i++)
+				for (int i = 1; i <= num; i++)
 				{
 					if (num % i == 0) 
 					{
 						count++;
-						break;
+						
 					}
 				}
 
-        if (count == 0 ) 
-			{
+        if (count !=2) 
+		
+		{
+            System.out.println(num + " is not a twisted prime number.");
+        }
+		else
+		{
 					// Reverse the number
-							int reversed = 0, x = num;
-							while (x > 0)
+							int reversed = 0;
+								int x = num;
+							while (x != 0)
 								{
-								int digit = x % 10;
-								reversed = reversed * 10 + digit;
+								int ld = x % 10;
+								reversed = reversed * 10 + ld;
 								x /= 10;
 							}
 
 					// Check if the reversed number is prime
-							int reversedCount = 0;
-							for (int i = 2; i < reversed; i++) 
+							int Count = 0;
+							for (int i = 1; i <= reversed; i++) 
 							{
 								if (reversed % i == 0)
 								{
-									reversedCount++;
-									break;
+									Count++;
+									
 								}
 							}
 
 					// Output the result
-					if (reversedCount == 0 ) 
+					if (Count == 2) 
 					{
 						System.out.println(num + " is a twisted prime number.");
-					} else 
+					}
+					else 
 					{
 						System.out.println(num + " is not a twisted prime number.");
 					}
+		}
 
 
 
-        }
-		else 
-		{
-            System.out.println(num + " is not a twisted prime number.");
-        }
-    }
+        
+	}
 }
+
 
